@@ -1,12 +1,12 @@
 opencv-python
 ipython
-keras==2.11.0
+keras
 matplotlib
 numpy
 pandas
 scipy
 scikit-learn
-tensorflow==2.11.0
+tensorflow
 torch
 torchvision
 torchaudio
