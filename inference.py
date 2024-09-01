@@ -23,7 +23,7 @@ from keras.layers import *
 from keras.optimizers import *
 from keras.applications import vgg16
 from keras.utils import img_to_array, array_to_img, load_img
-from keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import matplotlib
 
 SHAPE = (224, 224, 3)
