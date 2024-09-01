@@ -1,20 +1,7 @@
 import cv2
 import os
-import re
-import glob
 import random
-import shutil
-import warnings
-import numpy as np 
-import pandas as pd
-import scipy as sp
-import matplotlib.pyplot as plt
-import matplotlib.cm as cm
-import matplotlib.image as mpimg
-from platform import python_version
-from IPython.display import Image, display
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import classification_report, accuracy_score, confusion_matrix, ConfusionMatrixDisplay
+import numpy as np
 import tensorflow as tf
 import keras
 from tensorflow import keras
@@ -22,9 +9,6 @@ from keras.models import *
 from keras.layers import *
 from keras.optimizers import *
 from keras.applications import vgg16
-from keras.utils import img_to_array, array_to_img, load_img
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
-import matplotlib
 
 SHAPE = (224, 224, 3)
 classes = ["NORMAL", "PNEUMONIA"]
