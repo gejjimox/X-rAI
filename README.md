@@ -77,6 +77,7 @@ The model has been trained and evaluated with the following performance metrics:
 - `templates/`: Contains HTML templates.
   - `index.html`: Main template file for the application.
 - `inference.py`: Contains the code for running Grad-CAM inference.
+-  `vgg16_model_weights_10.h5`: Contains weights for the trained VGG16 model 
 
 ## Usage
 
@@ -91,6 +92,11 @@ Our application provides a complete end-to-end solution:
 - **Inference**: The uploaded or selected image is processed using the trained model.
 - **Visualization**: Grad-CAM visualizations are generated to highlight regions of interest.
 - **Results Display**: Results are presented in a user-friendly interface, showing both the original and Grad-CAM images.
+
+## References
+[Chest X-Ray Pneumonia Dataset](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia)
+
+
 
 
 
