@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-rAI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <!-- Logo Section -->
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="App Logo" class="app-logo">
+            </div>
+            <!-- Welcome Text -->
+            <div class="welcome-text">
+                <h1>X-Ray Anomaly Detection AI</h1>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Introduction Section -->
+    <section class="intro-section">
+        <div class="intro-container">
+            <h2>About the Model</h2>
+            <p>
+                X-rAI leverages advanced deep learning techniques to identify anomalies in chest X-ray images. The model is trained to detect pneumonia, caused by both bacteria and virus, with high accuracy. It uses Grad-CAM to highlight the regions of anomaly in the X-ray images to aid in interpretation.
+            </p>
+            <p>
+                For more details on the implementation and source code, visit our <a href="https://github.com/your-repo" target="_blank">GitHub page</a>.
+            </p>
+        </div>
+    </section>
+
+
+    <main>
+        <!-- File Upload Form -->
+        <div class="upload-section">
+            <h2>Upload Chest X-Ray Image</h2>
+            <form action="/" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept="image/*">
+                <button type="submit">Upload</button>
+            </form>
+
+            <!-- Dropdown for Example Images -->
+            <div class="example-images">
+                <h2>Or Select an Example Image:</h2>
+                <form action="/" method="post">
+                    <select name="example_image">
+                        <option value="">Choose an example...</option>
+                        <option value="example_normal_1.jpeg">Normal Example 1</option>
+                        <option value="example_normal_2.jpeg">Normal Example 2</option>
+                        <option value="example_pneumonia_1.jpeg">Pneumonia Example 1</option>
+                        <option value="example_pneumonia_2.jpeg">Pneumonia Example 2</option>
+                    </select>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Display Results -->
+        {% if prediction %}
+        <div class="results-section">
+            <h2>Prediction: {{ prediction }}</h2>
+            <div class="images-container">
+                <div class="image-wrapper">
+                    <h3>Original Image</h3>
+                    <!-- Check if the image is from example or uploaded -->
+                    {% if is_example %}
+                        <img src="{{ url_for('static', filename=original_img_url.split('static/')[-1]) }}" alt="Original Image" class="result-image">
+                    {% else %}
+                        <img src="{{ url_for('static', filename='uploads/' + original_img_url.split('/')[-1]) }}" alt="Original Image" class="result-image">
+                    {% endif %}
+                </div>
+                <div class="image-wrapper">
+                    <h3>Grad-CAM Image</h3>
+                    <img src="{{ url_for('static', filename='inference_gradcam/' + cam_img_url.split('/')[-1]) }}" alt="Grad-CAM Image" class="result-image">
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 X-rAI. All rights reserved.</p>
+    </footer>
+</body>
+</html>

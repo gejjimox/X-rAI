@@ -67,12 +67,13 @@ The model has been trained and evaluated with the following performance metrics:
 
     The application will be available at `http://127.0.0.1:5000`.
 
-## Directory Structure
+## Repository Structure
 
 - `app.py`: Main Flask application file.
 - `static/`: Contains static files like CSS, images, and uploaded files.
   - `styles.css`: CSS file for styling the application.
   - `uploads/`: Directory for storing uploaded images.
+  - `inference_gradcam/`: Directory for storing gradcam inference results.
   - `images/`: Directory for static images like logos.
 - `templates/`: Contains HTML templates.
   - `index.html`: Main template file for the application.
