@@ -5,9 +5,10 @@
 X-rAI leverages advanced Deep Learning techniques such as computer vision and models like VGG16 to identify anomalies in chest X-ray images. The model is trained to detect pneumonia, caused by both bacteria and virus, with high accuracy. It uses Grad-CAM to highlight the regions of anomaly in the X-ray images to aid in interpretation.
 
 
-## Live Demo
+## Web Application Demo
 
-You can try the application live at [Your Deployed App URL](http://your-deployed-app-url).
+![Demo GIF](X-rAI_live_demo.gif)
+*The gif above demonstrates the working of the X-rAI web application once setup is successful.*
 
 ## Features
 
